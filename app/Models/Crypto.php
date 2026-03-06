@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Crypto extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cmc_id',
+        'symbol',
+        'name',
+    ];
 }

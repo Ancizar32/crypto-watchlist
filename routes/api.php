@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CryptoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('crypto')->group(function () {
+
+    Route::get('/quotes', [CryptoController::class, 'quotes']);
+    Route::get('/history/{id}', [CryptoController::class, 'history']);
+    Route::get('/search', [CryptoController::class, 'search']);
+    Route::post('/add', [CryptoController::class, 'add']);
+    Route::delete('/{id}', [CryptoController::class, 'delete']);
 });
