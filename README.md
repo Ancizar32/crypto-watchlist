@@ -110,4 +110,4 @@ The system is composed of:
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-user/crypto-dashboard.git
+git clone https://github.com/Ancizar32/crypto-watchlist.git
