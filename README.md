@@ -65,9 +65,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-# Crypto Investment Dashboard
+# Crypto Watchlist Dashboard
 
-Simple web application that allows investors to track the performance of selected cryptocurrencies with real-time updates and historical visualization.
+Aplicación web desarrollada en **Laravel + JavaScript** que permite visualizar información de criptomonedas en tiempo real utilizando la API de **CoinMarketCap**.
+
+El sistema muestra precios actuales, cambios porcentuales, volumen de mercado y gráficos históricos, permitiendo además gestionar dinámicamente una lista de criptomonedas monitoreadas (Watchlist).
+
+---
 
 ## Features
 
@@ -111,3 +115,86 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Ancizar32/crypto-watchlist.git
+```
+
+# Tecnologías utilizadas
+
+Backend
+- Laravel
+- PHP
+- MySQL
+- Laravel Cache
+
+Frontend
+- JavaScript
+- Axios
+- Chart.js
+- Bootstrap
+
+API externa
+- CoinMarketCap API
+
+Control de versiones
+- Git
+
+---
+
+# Arquitectura
+
+El sistema sigue una arquitectura simple de tres capas:
+
+Frontend (SPA)
+↓
+Laravel API
+↓
+CoinMarketCap API
+↓
+Base de datos MySQL
+
+Laravel funciona como **API proxy**, evitando exponer la API key al frontend.
+
+---
+
+# Funcionalidades
+
+### Dashboard de criptomonedas
+
+La aplicación muestra una tabla con las criptomonedas seleccionadas.
+
+Información mostrada:
+
+- símbolo
+- precio actual
+- cambio porcentual en 24h
+- volumen
+- mini gráfico de tendencia (sparkline)
+
+---
+
+### Visualización de historial de precios
+
+Al seleccionar una criptomoneda se muestra un gráfico histórico con Chart.js.
+
+Rangos disponibles:
+
+- 24 horas
+- 7 días
+- 30 días
+
+---
+
+### Watchlist dinámica
+
+El usuario puede gestionar la lista de criptomonedas monitoreadas.
+
+Funciones:
+
+- agregar criptomoneda mediante autocomplete
+- eliminar criptomoneda
+- actualización automática del dashboard
+
+---
+
+### Actualización automática
+
+Los precios se actualizan cada **30 segundos**.
