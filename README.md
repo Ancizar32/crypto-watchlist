@@ -62,3 +62,52 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+# Crypto Investment Dashboard
+
+Simple web application that allows investors to track the performance of selected cryptocurrencies with real-time updates and historical visualization.
+
+## Features
+
+- Cryptocurrency watchlist (BTC, ETH, BNB)
+- Real-time prices using CoinMarketCap API
+- 24h percentage change
+- Market volume and market cap
+- Historical price persistence
+- Interactive price chart
+- Time range filters (24h / 7d / 30d)
+- Automatic refresh every 30 seconds
+- Mini trend charts (sparklines)
+- Responsive dashboard UI with Bootstrap
+
+## Tech Stack
+
+Backend:
+- PHP (Laravel)
+
+Frontend:
+- JavaScript
+- Axios
+- Chart.js
+- Bootstrap 5
+
+API:
+- CoinMarketCap API
+
+## Architecture
+
+The system is composed of:
+
+1. Laravel backend acting as API proxy to CoinMarketCap
+2. Database persistence of price history
+3. Single-page dynamic interface using AJAX
+4. Chart.js visualizations
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-user/crypto-dashboard.git
